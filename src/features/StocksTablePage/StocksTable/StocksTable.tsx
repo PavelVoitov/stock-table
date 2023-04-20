@@ -1,24 +1,25 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-// import { fetchStocks, setPage } from '../actions/stocksActions';
+import { useSelector} from 'react-redux';
+import {setMostActiveMarketsStocks, StockType} from "features/StocksTablePage/StocksTable/stocksTable-reducer";
+import {AppDispatch, AppRootStateType} from "app/store";
 
 const StocksTable = () => {
-	const dispatch = useDispatch();
-	// const stocks = useSelector(state => state.stocks.stocks);
+	const dispatch = AppDispatch();
+	const stocks = useSelector<AppRootStateType, StockType[]>(state => state.stocks);
 	// const page = useSelector(state => state.stocks.page);
-	const pageSize = 10;
+	// const pageSize = 10;
 
-	// useEffect(() => {
-	// 	dispatch(fetchStocks(page, pageSize));
-	// }, [dispatch, page]);
-	//
-	// const handlePrevPage = () => {
-	// 	dispatch(setPage(page - 1));
-	// };
-	//
-	// const handleNextPage = () => {
-	// 	dispatch(setPage(page + 1));
-	// };
+	useEffect(() => {
+		dispatch(setMostActiveMarketsStocks());
+	}, [dispatch, stocks]);
+
+	const handlePrevPage = () => {
+		// dispatch(setPage(page - 1));
+	};
+
+	const handleNextPage = () => {
+		// dispatch(setPage(page + 1));
+	};
 
 	return (
 		<div>
@@ -41,7 +42,9 @@ const StocksTable = () => {
 				</tbody>
 			</table>
 			<div>
-				<button onClick={handlePrevPage} disabled={page === 0}>
+				<button onClick={handlePrevPage}
+								// disabled={page === 0}
+				>
 					Prev
 				</button>
 				<button onClick={handleNextPage}>Next</button>
