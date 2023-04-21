@@ -1,0 +1,28 @@
+@import "./src/common/styles/sass/variables";
+
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: $primaryColor;
+  position: relative;
+  z-index: 1;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+      @media only screen and (max-width: 1186px) and (min-width: 0px) {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+    .span {
+      margin: 30px;
+      color: $bgColor;
+    }
+}

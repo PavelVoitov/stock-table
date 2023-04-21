@@ -1,11 +1,16 @@
 import React from 'react';
-import {StocksTablePage} from "features/StocksTablePage/StocksTablePage";
 import s from "./App.module.scss"
+import {Header} from "features/header/Header";
+import {RoutesPage} from "common/routes/Routes";
+import {Footer} from "common/components/footer/Footer";
 
 function App() {
   return (
     <div className={s.app}>
-      <StocksTablePage />
+      <Header />
+      <RoutesPage />
+      <p>Paginator</p>
+      <Footer />
     </div>
   );
 }

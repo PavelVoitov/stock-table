@@ -1,5 +1,6 @@
 import {StocksTableApi} from "api/stocksTable-api";
 import {AppThunk} from "app/store";
+import {ListType} from "common/routes/Routes";
 
 
 export const initialState: initialStateType = [{
@@ -20,17 +21,17 @@ export const stocksTableReducer = (state = initialState, action: StocksTableActi
 }
 
 //actions
-const setMostActiveMarketsStocksAC = (stocks: StockType[]) => ({
+const setMarketsStocksListAC = (stocks: StockType[]) => ({
 	type: "STOCKS-TABLE/SET_MOST_ACTIVE_MARKETS_STOCKS",
 	stocks
 } as const)
 
 //thunks
-export const setMostActiveMarketsStocks = (): AppThunk => async dispatch => {
+export const setMarketsStocksList = (listType: ListType): AppThunk => async dispatch => {
 	try {
-		const res = await StocksTableApi.getMostActiveMarketList()
+		const res = await StocksTableApi.getMarketList(listType)
 		const stocksArr = res.data.map(({symbol, companyName, latestPrice}) => ({symbol, companyName, latestPrice}))
-		dispatch(setMostActiveMarketsStocksAC(stocksArr))
+		dispatch(setMarketsStocksListAC(stocksArr))
 	} catch (e) {
 		console.log('error')
 	}
@@ -39,4 +40,4 @@ export const setMostActiveMarketsStocks = (): AppThunk => async dispatch => {
 //types
 export type StockType = { symbol: string, companyName: string, latestPrice: number | null }
 export type initialStateType = StockType[]
-export type StocksTableActionsType = ReturnType<typeof setMostActiveMarketsStocksAC>
+export type StocksTableActionsType = ReturnType<typeof setMarketsStocksListAC>

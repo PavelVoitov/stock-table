@@ -1,16 +1,24 @@
 import React, { useEffect } from 'react';
 import { useSelector} from 'react-redux';
-import {setMostActiveMarketsStocks, StockType} from "features/StocksTablePage/StocksTable/stocksTable-reducer";
+import {
+	setMarketsStocksList,
+	StockType
+} from "features/stocksTable/stocksTable-reducer";
 import {AppDispatch, AppRootStateType} from "app/store";
+import {ListType} from "common/routes/Routes";
 
-const StocksTable = () => {
+type Props = {
+	listType?: ListType
+}
+
+const StocksTable = ({listType}: Props) => {
 	const dispatch = AppDispatch();
 	const stocks = useSelector<AppRootStateType, StockType[]>(state => state.stocks);
 	// const page = useSelector(state => state.stocks.page);
 	// const pageSize = 10;
 
 	useEffect(() => {
-		dispatch(setMostActiveMarketsStocks());
+		if (listType) dispatch(setMarketsStocksList(listType));
 	}, [dispatch, stocks]);
 
 	const handlePrevPage = () => {

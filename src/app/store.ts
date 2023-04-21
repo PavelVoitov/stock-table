@@ -1,7 +1,7 @@
 import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk'
 import {applyMiddleware} from "redux"
 import {legacy_createStore, combineReducers} from "redux"
-import {StocksTableActionsType, stocksTableReducer} from "features/StocksTablePage/StocksTable/stocksTable-reducer";
+import {StocksTableActionsType, stocksTableReducer} from "features/stocksTable/stocksTable-reducer";
 import {useDispatch} from "react-redux";
 
 

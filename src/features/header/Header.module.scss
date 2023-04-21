@@ -1,0 +1,8 @@
+@import "src/common/styles/sass/variables";
+.headerBlock {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  margin-bottom: 20px;
+  border-top: 10px solid $primaryColor;
+}

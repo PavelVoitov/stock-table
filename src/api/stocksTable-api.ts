@@ -3,14 +3,14 @@ import axios from 'axios'
 const instance = axios.create({
 	baseURL: "https://cloud.iexapis.com/stable/stock/market/list/",
 	params: {
-		token: "pk_6c547e4bffc74ee9a9e166f462eb5f8f"
+		token: "pk_6c547e4bffc74ee9a9e166f462eb5f8f",
 	}
 })
 
 // api
 export const StocksTableApi = {
-	getMostActiveMarketList() {
-		return instance.get<StocksResponseType>("mostactive")
+	getMarketList(listType: string, params = {listLimit: 10}) {
+		return instance.get<StocksResponseType>(`${listType}`, {params})
 	},
 }
 

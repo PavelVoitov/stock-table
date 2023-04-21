@@ -1,0 +1,35 @@
+@import "../../../common/styles/sass/variables";
+
+.nav {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  .link {
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $primaryColor;
+    border-top: none;
+    cursor: pointer;
+  }
+  & a {
+    color: $linkColor;
+    text-decoration: none;
+  }
+
+  & a:hover {
+    background-color: $linkColor;
+    color: $primaryColor;
+  }
+
+  .active {
+    color: $primaryColor;
+  }
+
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
+}
