@@ -1,0 +1,40 @@
+@import "src/common/styles/sass/variables";
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 1200px;
+  margin: 10px auto;
+
+  th {
+    background-color: $linkColor;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+    border: 1px solid $textColor;
+  }
+
+  td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid $textColor;
+  }
+
+  tr:nth-child(even) {
+    background-color: $primaryColor;
+  }
+
+  tr:hover {
+    background-color: $textColor;
+    color: $bgColor;
+    cursor: default;
+  }
+
+  .positive-change {
+    color: $primaryColor;
+  }
+
+  .negative-change {
+    color: $linkColor;
+  }
+}

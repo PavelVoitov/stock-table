@@ -1,12 +1,14 @@
 import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk'
 import {applyMiddleware} from "redux"
 import {legacy_createStore, combineReducers} from "redux"
-import {StocksTableActionsType, stocksTableReducer} from "features/stocksTable/stocksTable-reducer";
+import {StocksTableActionsType, stocksTableReducer} from "features/stocksTableBlock/stocksTable-reducer";
 import {useDispatch} from "react-redux";
+import {appReducer} from "app/app-reducer";
 
 
 const rootReducers = combineReducers({
-	stocks: stocksTableReducer
+	app: appReducer,
+	stocksTable: stocksTableReducer
 })
 
 export type AppDispatchType = ThunkDispatch<AppRootStateType, any, ActionsRootTypes>

@@ -9,7 +9,7 @@ const instance = axios.create({
 
 // api
 export const StocksTableApi = {
-	getMarketList(listType: string, params = {listLimit: 10}) {
+	getMarketList(listType: string, params = {listLimit: 50}) {
 		return instance.get<StocksResponseType>(`${listType}`, {params})
 	},
 }

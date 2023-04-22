@@ -16,13 +16,13 @@
     cursor: pointer;
   }
   & a {
-    color: $linkColor;
+    color: $textColor;
     text-decoration: none;
   }
 
   & a:hover {
-    background-color: $linkColor;
-    color: $primaryColor;
+    background-color: $primaryColor;
+    color: $textColor;
   }
 
   .active {
