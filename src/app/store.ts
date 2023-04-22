@@ -3,7 +3,7 @@ import {applyMiddleware} from "redux"
 import {legacy_createStore, combineReducers} from "redux"
 import {StocksTableActionsType, stocksTableReducer} from "features/stocksTableBlock/stocksTable-reducer";
 import {useDispatch} from "react-redux";
-import {appReducer} from "app/app-reducer";
+import {AppActionsType, appReducer} from "app/app-reducer";
 
 
 const rootReducers = combineReducers({
@@ -23,4 +23,4 @@ export type AppThunk<ReturnType = void> = ThunkAction<
 	unknown,
 	ActionsRootTypes
 	>
-type ActionsRootTypes = StocksTableActionsType
+type ActionsRootTypes = StocksTableActionsType | AppActionsType

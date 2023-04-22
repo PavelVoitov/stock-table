@@ -26,7 +26,7 @@ export const Paginator = ({currentPage, totalPages, onPageChange}: Props) => {
 	return (
 		<div className={s.paginator}>
 			<CommonButton
-				label={"Prev"}
+				label={"<< Prev"}
 				onClick={handlePrevPage}
 				disabled={currentPage === 1}
 			/>
@@ -40,7 +40,7 @@ export const Paginator = ({currentPage, totalPages, onPageChange}: Props) => {
 				</div>
 			))}
 			<CommonButton
-				label={"Next"}
+				label={"Next >>"}
 				onClick={handleNextPage}
 				disabled={currentPage === totalPages}
 			/>

@@ -1,5 +1,6 @@
 import {StocksTableApi} from "api/stocksTable-api";
 import {AppThunk} from "app/store";
+import {setAppStatusAC} from "app/app-reducer";
 
 
 export const initialState: initialStateType = {
@@ -43,6 +44,7 @@ export const setCurrentPage = (currentPage: number) => ({
 
 //thunks
 export const setMarketsStocksList = (listType: ListType): AppThunk => async dispatch => {
+	dispatch(setAppStatusAC('loading'))
 	try {
 		const res = await StocksTableApi.getMarketList(listType)
 		const stocksArr = res.data.map(({symbol, companyName, latestPrice, change, changePercent}) => ({symbol, companyName, latestPrice, change, changePercent}))
@@ -50,6 +52,8 @@ export const setMarketsStocksList = (listType: ListType): AppThunk => async disp
 		dispatch(setMarketsStocksListAC(stocksArr, totalPages, listType))
 	} catch (e) {
 		console.log('error')
+	} finally {
+		dispatch(setAppStatusAC('succeeded'))
 	}
 }
 
