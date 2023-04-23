@@ -3,7 +3,7 @@ import axios from 'axios'
 const instance = axios.create({
 	baseURL: "https://cloud.iexapis.com/stable/stock/market/list/",
 	params: {
-		token: process.env.REACT_APP_TOKEN,
+		token: process.env.REACT_APP_IEXCLOUD_TOKEN,
 	}
 })
 

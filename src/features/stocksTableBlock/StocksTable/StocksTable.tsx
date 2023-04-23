@@ -10,7 +10,6 @@ import s from "features/stocksTableBlock/StocksTable/StocksTable.module.scss"
 import {DragDropContext, Draggable, Droppable} from 'react-beautiful-dnd';
 
 
-
 type Props = {
 	listType: ListType
 	stocks: StockType[]
@@ -63,7 +62,7 @@ export const StocksTable = memo(({listType, stocks, startIndex, endIndex}: Props
 											>
 												<td>{stocks.indexOf(symbol) + 1}</td>
 												<td>{symbol.symbol}</td>
-												<td className={s.companyName}>{symbol.companyName}</td>
+												<td>{symbol.companyName}</td>
 												<td>{symbol.latestPrice}</td>
 												<td>{symbol.change}</td>
 												<td>{symbol.changePercent}</td>

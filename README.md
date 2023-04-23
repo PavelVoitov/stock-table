@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# Stocks Reporting App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web application was created using React and Redux, and utilizes the [IEX Cloud API](https://iexcloud.io/) to retrieve stock data.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- A numbered table that displays up to 10 stock reports per page
+- Users can navigate between pages using the next/previous buttons and page numbers in the pagination
+- Unit tests using [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- Users can reorder rows in the table using [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)
 
-### `yarn start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Before running the application, you'll need to obtain a free API key from [IEX Cloud](https://iexcloud.io/). Once you have your API key, create a `.env` file at the root of the project and add the following line:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+REACT_APP_IEXCLOUD_TOKEN=your-token-here
+```
 
-### `yarn test`
+To start the application locally, run the following commands:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm install
+npm start
+```
 
-### `yarn build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React
+- TypeScript
+- Redux
+- [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)
+- [IEX Cloud API](https://iexcloud.io/)
+- Jest
+- React Testing Library
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Bonus Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In addition to the main features required for the project, the following bonus features were implemented:
 
-### `yarn eject`
+- A modern and responsive design
+- Error handling for failed API requests and incorrect user input
+- A "loading" state for when the API data is being fetched
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Conclusion
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Overall, this project was a great opportunity to practice building a React application from scratch while incorporating Redux and other useful tools like react-beautiful-dnd and Jest. The end result is a user-friendly and visually pleasing application that effectively utilizes the IEX Cloud API to display stock data.
