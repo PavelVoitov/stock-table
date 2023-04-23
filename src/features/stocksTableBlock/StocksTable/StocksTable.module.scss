@@ -1,0 +1,125 @@
+@import "src/common/styles/sass/variables";
+
+.tableWrapper {
+  width: 900px;
+
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+
+    th:nth-child(3) {
+      width: 250px;
+    }
+
+    th:nth-child(5) {
+      width: 100px;
+    }
+
+    th:nth-child(6) {
+      width: 120px;
+    }
+
+    th {
+      background-color: $linkColor;
+      font-weight: bold;
+      text-align: center;
+      padding: 12px;
+      border: 1px solid $textColor;
+    }
+
+    td {
+      text-align: left;
+      padding: 8px;
+      border: 1px solid $textColor;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+    }
+
+    tr:nth-child(even) {
+      background-color: $primaryColor;
+    }
+
+    tr:hover {
+      background-color: $textColor;
+      color: $bgColor;
+      cursor: grab;
+    }
+  }
+}
+
+@media (max-width: 768px) and (min-width: 450px){
+  .tableWrapper {
+    width: 700px;
+
+    .table {
+      th:nth-child(1) {
+        width: 15px;
+      }
+      th:nth-child(2) {
+        width: 20px;
+      }
+      th:nth-child(3) {
+        width: 60px;
+      }
+      th:nth-child(4) {
+        width: 25px;
+      }
+
+      th:nth-child(5) {
+        width: 30px;
+      }
+
+      th:nth-child(6) {
+        width: 30px;
+      }
+      th,
+      td {
+        padding: 4px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+@media (max-width: 450px) and (min-width: 0px){
+  .tableWrapper {
+    width: 360px;
+
+    .table {
+      th:nth-child(1) {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 15px;
+      }
+      th:nth-child(2) {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 25px;
+      }
+      th:nth-child(3) {
+        width: 60px;
+      }
+      th:nth-child(4) {
+        width: 25px;
+      }
+
+      th:nth-child(5) {
+        width: 30px;
+      }
+
+      th:nth-child(6) {
+        width: 30px;
+      }
+      th,
+      td {
+        padding: 4px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+

@@ -1,25 +1,15 @@
 @import "./src/common/styles/sass/variables";
 
-
 .footer {
-  //align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: $primaryColor;
-  z-index: 1;
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    //height: 100%;
-    width: 80%;
-    margin: 0 auto;
-      @media only screen and (max-width: 1186px) and (min-width: 0px) {
-        justify-content: center;
-        width: 100%;
-      }
-    }
+  width: 100vw;
+  height: 80px;
+
     .span {
-      margin: 30px;
       color: $textColor;
     }
 }

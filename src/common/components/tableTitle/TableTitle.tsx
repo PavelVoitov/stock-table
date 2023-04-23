@@ -4,9 +4,10 @@ import {memo} from "react";
 
 type Props = {
 	listType: ListType
+	stocksQuantity: number
 }
 
-export const TableTitle = memo(({listType}: Props) => {
+export const TableTitle = memo(({listType, stocksQuantity}: Props) => {
 	enum Titles {
 		mostActiveTitle = "Most Active",
 		gainers = "Gainers",
@@ -14,8 +15,8 @@ export const TableTitle = memo(({listType}: Props) => {
 	}
 
 	return (
-		<div>
-			<h1>Quotes for the top 50 symbols in the {listType === "mostactive"
+		<div style={{textAlign: "center"}}>
+			<h1>Quotes for the top {stocksQuantity} symbols in the {listType === "mostactive"
 				? Titles.mostActiveTitle
 				: listType === "gainers"
 					? Titles.gainers

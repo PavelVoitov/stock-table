@@ -8,6 +8,7 @@ import {AppRootStateType} from "app/store";
 import {StockType} from "features/stocksTableBlock/stocksTable-reducer";
 import {StatusType} from "app/app-reducer";
 import {LinearProgress, Stack} from "@mui/material";
+import {ErrorSnackbars} from "common/components/errorSnackbar/ErrorSnackbar";
 
 function App() {
 	const stocks = useSelector<AppRootStateType, StockType[]>(state => state.stocksTable.stocks);
@@ -15,6 +16,7 @@ function App() {
 
 	return (
 		<div className={s.app}>
+			<ErrorSnackbars/>
 			{status === "loading" ?
 				<Stack sx={{width: '100%', color: 'grey.500'}} spacing={2}>
 					<LinearProgress color="success" sx={{height: 5}}/>

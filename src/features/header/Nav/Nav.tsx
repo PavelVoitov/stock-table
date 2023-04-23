@@ -1,8 +1,8 @@
-import React, {memo} from 'react'
+import React from 'react'
 import s from 'features/header/Nav/Nav.module.scss'
 import {Link} from "react-router-dom";
 
-export const Nav = memo(() => {
+export const Nav = () => {
 	return (
 		<div className={s.nav}>
 			<Link to="mostactive" className={s.link}>
@@ -16,4 +16,4 @@ export const Nav = memo(() => {
 			</Link>
 		</div>
 	)
-})
+}
