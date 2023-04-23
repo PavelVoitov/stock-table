@@ -19,7 +19,6 @@ type Props = {
 }
 
 export const StocksTable = memo(({listType, stocks, startIndex, endIndex}: Props) => {
-	console.log("StocksTable render")
 	const dispatch = AppDispatch();
 
 	useEffect(() => {
@@ -53,9 +52,9 @@ export const StocksTable = memo(({listType, stocks, startIndex, endIndex}: Props
 					<Droppable droppableId={`${listType} ${startIndex}`}>
 						{(provided) => (
 							<tbody {...provided.droppableProps} ref={provided.innerRef}>
-							{stocks.slice(startIndex, endIndex).map((symbol, index) => {
+							{stocks.slice(startIndex, endIndex).map((symbol) => {
 								return (
-									<Draggable key={symbol.symbol} draggableId={symbol.symbol} index={index}>
+									<Draggable key={symbol.symbol} draggableId={symbol.symbol} index={stocks.indexOf(symbol)}>
 										{(provided) => (
 											<tr
 												ref={provided.innerRef}

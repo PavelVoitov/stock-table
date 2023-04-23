@@ -72,7 +72,6 @@ export const setMarketsStocksList = (listType: ListType): ThunkAction<void, AppR
 		dispatch(setMarketsStocksListAC(stocksArr, totalPages, listType))
 		dispatch(setAppStatusAC('succeeded'))
 	} catch (error) {
-		console.log(error)
 		handleServerNetworkError(error, dispatch)
 	}
 }

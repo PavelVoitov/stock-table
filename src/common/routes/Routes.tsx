@@ -4,7 +4,6 @@ import {Error404} from "common/components/error404/Error404";
 import {StockType} from "features/stocksTableBlock/stocksTable-reducer";
 import {StockTableBlock} from "features/stocksTableBlock/StockTableBlock";
 
-
 type Props = {
 	stocks: StockType[]
 }

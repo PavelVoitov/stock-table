@@ -1,11 +1,11 @@
 import {Paginator} from "common/components/paginator/Paginator";
 import {useSelector} from "react-redux";
 import {AppDispatch, AppRootStateType} from "app/store";
-import {ListType, setCurrentPage, setMarketsStocksList, StockType} from "features/stocksTableBlock/stocksTable-reducer";
+import {ListType, setCurrentPage, StockType} from "features/stocksTableBlock/stocksTable-reducer";
 import {StocksTable} from "features/stocksTableBlock/StocksTable/StocksTable";
 import {TableTitle} from "common/components/tableTitle/TableTitle";
 import s from "./StockTableBlock.module.scss"
-import {memo, useEffect} from "react";
+import {memo} from "react";
 
 type Props = {
 	listType: ListType
@@ -21,10 +21,6 @@ export const StockTableBlock = memo(({listType, stocks}: Props) => {
 	const handlerOnPageChange = (page: number) => {
 		dispatch(setCurrentPage(page))
 	}
-
-	useEffect(() => {
-		dispatch(setMarketsStocksList(listType));
-	}, [listType]);
 
 	const startIndex = (currentPage - 1) * itemsPerPage;
 	const endIndex = startIndex + itemsPerPage;
