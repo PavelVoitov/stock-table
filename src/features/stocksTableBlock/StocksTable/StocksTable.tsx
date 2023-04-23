@@ -48,7 +48,7 @@ export const StocksTable = memo(({listType, stocks, startIndex, endIndex}: Props
 				</tr>
 				</thead>
 				<DragDropContext onDragEnd={handleOnDragEnd}>
-					<Droppable droppableId={`${listType} ${startIndex}`}>
+					<Droppable droppableId={`${stocks}`}>
 						{(provided) => (
 							<tbody {...provided.droppableProps} ref={provided.innerRef}>
 							{stocks.slice(startIndex, endIndex).map((symbol) => {
